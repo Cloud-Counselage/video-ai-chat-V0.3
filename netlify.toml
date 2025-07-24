@@ -1,0 +1,13 @@
+[build]
+  command = "npm install --legacy-peer-deps && npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+  VITE_HUGGINGFACE_TOKEN = "your-token-here"  # You’ll set it in Netlify UI
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cross-Origin-Embedder-Policy = "require-corp"
+    Cross-Origin-Opener-Policy = "same-origin"
